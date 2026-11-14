@@ -1,0 +1,32 @@
+create database makkals;
+USE makkals;
+create table student(
+   id INT PRIMARY KEY auto_increment,
+   name varchar(100),
+   email varchar(100),
+   course varchar(100)
+);
+select * from student;
+
+insert into student values(1,'dhivya','dhivyaf680@gmail.com','python developer');
+insert into student values(2,'tamil','tamil02@gmail.com','Data analytics');
+insert into student values(3,'Praveen','praveen01@gmail.com','java');
+
+update student set course='Data science' where id=2;
+
+delete from student where id=3;
+
+CREATE TABLE courses (
+    course_id INT PRIMARY KEY AUTO_INCREMENT,
+    course_name VARCHAR(100) NOT NULL,
+    duration_months INT
+);
+
+CREATE TABLE students_details (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    email VARCHAR(100),
+    course_id INT,
+    FOREIGN KEY (course_id) REFERENCES courses(course_id)
+);
+SELECT*FROM  courses;
